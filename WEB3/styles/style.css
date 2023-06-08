@@ -1,0 +1,177 @@
+
+* , body {
+    background-color: #0b001d;
+    color: #fff;
+}
+
+.logo {
+    position: relative;
+    top: 28px;
+    width: 432px;
+    margin-left: 186px;
+    max-width: 277px;
+    pointer-events: none;
+}
+
+
+#home-nav{
+    color: #a807f3;
+    text-decoration: underline;
+    font-weight: 800;
+    pointer-events: none;
+}
+
+
+
+
+.navbar {
+    /*background-color: #a807f3; wäre gut für buttons*/
+    color: beige;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+  }
+  
+  .nav-links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav-links li {
+    margin-right: 20px;
+    background-color: #0b001d;
+  }
+  
+  .nav-links li a {
+    color: beige;
+    text-decoration: none;
+    font-weight: bold;
+    background-color: #0b001d;
+  }
+  
+  .dropdown {
+    position: relative;
+  }
+  
+  .dropdown-menu {
+    display: none;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #0b001d;
+    line-height: 2;
+  }
+  
+  .dropdown:hover .dropdown-menu {
+    display: block;
+  }
+
+
+  main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    color: #fff;
+}
+
+#welcome {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+#sec-text {
+    font-size: 24px;
+    font-weight: 400;
+    margin-bottom: 30px;
+    line-height: 1.5;
+}
+
+
+.cta-button {
+    display: inline-block;
+    background-color: #4c43ff;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #3b33cc;
+}
+  
+
+
+#signup-modal {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+
+
+#signup-button {
+  position: absolute;
+  right: 0;
+}
+
+#signup-modal label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+#signup-modal input {
+  display: block;
+  margin-bottom: 20px;
+  padding: 10px;
+  width: 300%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#signup-modal button {
+  display: block;
+  margin-top: 20px;
+  padding: 10px;
+  width: 315%;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#welcome-message {
+  display: none;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  color: #fff;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+#welcome-message span {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+#greeting {
+  font-weight: bold;
+}
