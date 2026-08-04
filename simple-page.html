@@ -65,6 +65,24 @@
     transform: translateY(-2px);
   }
 
+  .btn-row {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  button.secondary {
+    background: transparent;
+    color: var(--muted);
+    border: 1px solid var(--muted);
+  }
+
+  button.secondary:hover {
+    background: var(--muted);
+    color: var(--card);
+  }
+
   #counter {
     font-size: 2.5rem;
     font-weight: bold;
@@ -86,7 +104,10 @@
   <p>Eine einfache HTML-Seite mit eingebettetem CSS und JavaScript.</p>
 
   <div id="counter">0</div>
-  <button id="incrementBtn">Klick mich</button>
+  <div class="btn-row">
+    <button id="incrementBtn">Klick mich</button>
+    <button id="resetBtn" class="secondary">Reset</button>
+  </div>
 
   <div id="time">Aktuelle Uhrzeit: <span id="clock">--:--:--</span></div>
 </div>
@@ -95,9 +116,15 @@
   let count = 0;
   const counterEl = document.getElementById('counter');
   const btn = document.getElementById('incrementBtn');
+  const resetBtn = document.getElementById('resetBtn');
 
   btn.addEventListener('click', () => {
     count++;
+    counterEl.textContent = count;
+  });
+
+  resetBtn.addEventListener('click', () => {
+    count = 0;
     counterEl.textContent = count;
   });
 
