@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Player - SSAS-CODES</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="favicon_io/site.webmanifest">
+    <link rel="icon" href="/favicon_io/favicon.ico" type="image/x-icon">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            background-color: #0d0d0d;
+            color: #f5f5f5;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        header {
+            padding: 16px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0 0 6px;
+            font-size: 20px;
+        }
+
+        header p {
+            margin: 0;
+            font-size: 13px;
+            color: #a3a3a3;
+        }
+
+        .player-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding-top: 56.25%; /* 16:9 Seitenverhaeltnis */
+            background-color: #000;
+        }
+
+        .player-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .blocker-overlay {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            z-index: 5;
+        }
+
+        footer {
+            text-align: center;
+            padding: 14px;
+            font-size: 12px;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Video Player</h1>
+        <p>Eingebettet ueber ein sandboxed iframe &ndash; Pop-ups und Weiterleitungs-Werbung werden blockiert.</p>
+    </header>
+
+    <main>
+        <div class="player-wrapper">
+            <!--
+                sandbox ohne "allow-popups", "allow-top-navigation" und
+                "allow-top-navigation-by-user-activation" verhindert, dass der
+                eingebettete Inhalt neue Tabs/Fenster oeffnet oder die Seite
+                zu einer Werbe-URL weiterleitet. "allow-scripts" und
+                "allow-same-origin" bleiben erlaubt, damit der Player selbst
+                funktioniert.
+            -->
+            <iframe
+                src="https://vidaraa.cc/e/Fc2AdK3bq7b0j"
+                sandbox="allow-scripts allow-same-origin allow-forms allow-presentation"
+                allow="fullscreen; encrypted-media; picture-in-picture"
+                allowfullscreen
+                referrerpolicy="no-referrer"
+                loading="lazy"
+                title="Video Player">
+            </iframe>
+            <div class="blocker-overlay"></div>
+        </div>
+    </main>
+
+    <footer>
+        &copy; 2026 SSAS CODES
+    </footer>
+
+    <script>
+        // Zusaetzlicher Schutz: falls der eingebettete Inhalt versucht,
+        // die Elternseite per window.open o.ae. zu manipulieren, wird das
+        // hier unterbunden. Das sandbox-Attribut oben ist die eigentliche
+        // Blockade, das hier ist nur eine zweite Sicherheitsebene.
+        window.open = function () {
+            return null;
+        };
+    </script>
+
+</body>
+</html>
