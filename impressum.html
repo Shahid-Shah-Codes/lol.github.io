@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Impressum &amp; Datenschutz - SSAS CODES</title>
+    <meta name="description" content="Impressum und Datenschutzerklaerung von SSAS CODES.">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="favicon_io/site.webmanifest">
+    <link rel="icon" href="favicon_io/favicon.ico" type="image/x-icon">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg: #0b0b0f;
+            --bg-soft: #131319;
+            --card: #16161d;
+            --border: rgba(255, 255, 255, 0.08);
+            --text: #f2f2f5;
+            --text-dim: #a2a2ad;
+            --accent: #6c8cff;
+            --accent-2: #b06cff;
+            --warn: #ffcc66;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: radial-gradient(1200px 600px at 50% -10%, #1b1b3a 0%, var(--bg) 55%) fixed;
+            color: var(--text);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            color: var(--accent);
+        }
+
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px max(20px, env(safe-area-inset-left)) 14px max(20px, env(safe-area-inset-right));
+            background: rgba(11, 11, 15, 0.7);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            font-size: 18px;
+            letter-spacing: 0.02em;
+            text-decoration: none;
+            color: var(--text);
+        }
+
+        .brand-mark {
+            width: 34px;
+            height: 34px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 15px;
+            font-weight: 800;
+            color: #fff;
+            background: linear-gradient(135deg, var(--accent), var(--accent-2));
+            box-shadow: 0 4px 16px rgba(108, 140, 255, 0.35);
+        }
+
+        .back-link {
+            font-size: 14px;
+            text-decoration: none;
+            color: var(--text-dim);
+        }
+
+        .back-link:hover {
+            color: var(--text);
+        }
+
+        .wrap {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 48px 20px 60px;
+        }
+
+        h1 {
+            font-size: clamp(28px, 6vw, 40px);
+            margin: 0 0 8px;
+            font-weight: 800;
+            letter-spacing: -0.01em;
+        }
+
+        .lead {
+            color: var(--text-dim);
+            margin: 0 0 28px;
+            font-size: 15px;
+        }
+
+        .placeholder-note {
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+            background: rgba(255, 204, 102, 0.08);
+            border: 1px solid rgba(255, 204, 102, 0.35);
+            color: var(--warn);
+            border-radius: 14px;
+            padding: 16px 18px;
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 40px;
+        }
+
+        .placeholder-note svg {
+            width: 20px;
+            height: 20px;
+            flex: none;
+            margin-top: 2px;
+            fill: currentColor;
+        }
+
+        .section-nav {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .section-nav a {
+            text-decoration: none;
+            font-size: 13px;
+            padding: 8px 14px;
+            border-radius: 999px;
+            border: 1px solid var(--border);
+            background: rgba(255, 255, 255, 0.03);
+            color: var(--text-dim);
+        }
+
+        .section-nav a:hover {
+            color: var(--text);
+            background: rgba(255, 255, 255, 0.06);
+        }
+
+        section {
+            background: linear-gradient(180deg, var(--card), var(--bg-soft));
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            padding: 30px;
+            margin-bottom: 24px;
+            scroll-margin-top: 84px;
+        }
+
+        section h2 {
+            font-size: 22px;
+            margin: 0 0 18px;
+        }
+
+        section h3 {
+            font-size: 16px;
+            margin: 24px 0 8px;
+            color: var(--text);
+        }
+
+        section p, section li {
+            font-size: 14.5px;
+            line-height: 1.75;
+            color: var(--text-dim);
+        }
+
+        section ul {
+            margin: 8px 0;
+            padding-left: 20px;
+        }
+
+        .fill-in {
+            color: var(--warn);
+            font-weight: 600;
+            border-bottom: 1px dashed rgba(255, 204, 102, 0.6);
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 20px max(28px, env(safe-area-inset-bottom));
+            color: var(--text-dim);
+            font-size: 13px;
+            border-top: 1px solid var(--border);
+        }
+
+        footer a {
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="index.html" class="brand">
+            <span class="brand-mark">SS</span>
+            SSAS CODES
+        </a>
+        <a href="index.html" class="back-link">&larr; Zurueck zur Startseite</a>
+    </nav>
+
+    <div class="wrap">
+        <h1>Impressum &amp; Datenschutz</h1>
+        <p class="lead">Rechtliche Angaben und Informationen zur Datenverarbeitung auf dieser Website.</p>
+
+        <div class="placeholder-note">
+            <svg viewBox="0 0 24 24"><path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"/></svg>
+            <span>
+                Diese Seite enthaelt Platzhalter (farblich hervorgehoben), die vor der
+                echten Nutzung der Website durch die richtigen Angaben ersetzt werden
+                muessen &ndash; insbesondere vollstaendiger Name und ladungsfaehige
+                Anschrift gemaess &sect; 5 TMG. Ohne diese Angaben erfuellt das
+                Impressum die gesetzlichen Pflichtangaben noch nicht.
+            </span>
+        </div>
+
+        <div class="section-nav">
+            <a href="#impressum">Impressum</a>
+            <a href="#datenschutz">Datenschutzerklaerung</a>
+        </div>
+
+        <section id="impressum">
+            <h2>Impressum</h2>
+
+            <h3>Angaben gemaess &sect; 5 TMG</h3>
+            <p>
+                <span class="fill-in">[Vor- und Nachname]</span><br>
+                <span class="fill-in">[Strasse und Hausnummer]</span><br>
+                <span class="fill-in">[Postleitzahl und Ort]</span><br>
+                <span class="fill-in">[Land]</span>
+            </p>
+
+            <h3>Kontakt</h3>
+            <p>
+                E-Mail: <a href="mailto:shahid.shah.codes@gmail.com">shahid.shah.codes@gmail.com</a><br>
+                Telefon: <span class="fill-in">[optional &ndash; Telefonnummer]</span>
+            </p>
+
+            <h3>Verantwortlich fuer den Inhalt nach &sect; 18 Abs. 2 MStV</h3>
+            <p>
+                <span class="fill-in">[Vor- und Nachname]</span>, Anschrift wie oben.
+            </p>
+
+            <h3>Haftung fuer Inhalte</h3>
+            <p>
+                Als Diensteanbieter bin ich gemaess &sect; 7 Abs. 1 TMG fuer eigene
+                Inhalte auf diesen Seiten nach den allgemeinen Gesetzen
+                verantwortlich. Nach &sect;&sect; 8 bis 10 TMG bin ich als
+                Diensteanbieter jedoch nicht verpflichtet, uebermittelte oder
+                gespeicherte fremde Informationen zu ueberwachen oder nach
+                Umstaenden zu forschen, die auf eine rechtswidrige Taetigkeit
+                hinweisen. Verpflichtungen zur Entfernung oder Sperrung der
+                Nutzung von Informationen nach den allgemeinen Gesetzen bleiben
+                hiervon unberuehrt. Eine diesbezuegliche Haftung ist jedoch erst
+                ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung
+                moeglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen
+                werde ich diese Inhalte umgehend entfernen.
+            </p>
+
+            <h3>Haftung fuer Links</h3>
+            <p>
+                Mein Angebot enthaelt Links zu externen Websites Dritter, auf
+                deren Inhalte ich keinen Einfluss habe. Deshalb kann ich fuer
+                diese fremden Inhalte auch keine Gewaehr uebernehmen. Fuer die
+                Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter
+                oder Betreiber der Seiten verantwortlich. Die verlinkten Seiten
+                wurden zum Zeitpunkt der Verlinkung auf moegliche
+                Rechtsverstoesse ueberprueft. Rechtswidrige Inhalte waren zum
+                Zeitpunkt der Verlinkung nicht erkennbar. Eine permanente
+                inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne
+                konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar.
+                Bei Bekanntwerden von Rechtsverletzungen werde ich derartige
+                Links umgehend entfernen.
+            </p>
+
+            <h3>Urheberrecht</h3>
+            <p>
+                Die durch mich erstellten Inhalte und Werke auf diesen Seiten
+                unterliegen dem deutschen Urheberrecht. Die Vervielfaeltigung,
+                Bearbeitung, Verbreitung und jede Art der Verwertung ausserhalb
+                der Grenzen des Urheberrechtes beduerfen der schriftlichen
+                Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und
+                Kopien dieser Seite sind nur fuer den privaten, nicht
+                kommerziellen Gebrauch gestattet.
+            </p>
+        </section>
+
+        <section id="datenschutz">
+            <h2>Datenschutzerklaerung</h2>
+
+            <h3>Verantwortlicher</h3>
+            <p>
+                Verantwortlich fuer die Datenverarbeitung auf dieser Website ist:<br>
+                <span class="fill-in">[Vor- und Nachname]</span>,
+                <span class="fill-in">[Anschrift]</span><br>
+                E-Mail: <a href="mailto:shahid.shah.codes@gmail.com">shahid.shah.codes@gmail.com</a>
+            </p>
+
+            <h3>Hosting</h3>
+            <p>
+                Diese Website wird ueber GitHub Pages gehostet, einen Dienst der
+                GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA
+                94107, USA (bzw. GitHub B.V. innerhalb der EU). Beim Aufruf
+                dieser Seite verarbeitet GitHub automatisch technische Daten wie
+                IP-Adresse, Datum und Uhrzeit des Zugriffs, Browsertyp und
+                aufgerufene Seite in Server-Logfiles, um die Website
+                auszuliefern und die Systemsicherheit zu gewaehrleisten. Weitere
+                Informationen findest du in der
+                <a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener noreferrer">Datenschutzerklaerung von GitHub</a>.
+            </p>
+
+            <h3>Cookies und Tracking</h3>
+            <p>
+                Diese Website selbst setzt keine eigenen Cookies und bindet
+                keine Analyse- oder Trackingdienste (z. B. Google Analytics)
+                ein.
+            </p>
+
+            <h3>Kontaktaufnahme per E-Mail</h3>
+            <p>
+                Wenn du mich per E-Mail kontaktierst, werden deine Angaben
+                (E-Mail-Adresse, ggf. Name und Nachrichtinhalt) zur Bearbeitung
+                deiner Anfrage gespeichert und verarbeitet. Rechtsgrundlage ist
+                Art. 6 Abs. 1 lit. b bzw. lit. f DSGVO (Bearbeitung deiner
+                Anfrage bzw. berechtigtes Interesse an effizienter
+                Kommunikation). Diese Daten gebe ich nicht ohne deine
+                Einwilligung an Dritte weiter.
+            </p>
+
+            <h3>Deine Rechte</h3>
+            <p>Du hast jederzeit das Recht auf:</p>
+            <ul>
+                <li>Auskunft ueber die zu deiner Person gespeicherten Daten (Art. 15 DSGVO)</li>
+                <li>Berichtigung unrichtiger Daten (Art. 16 DSGVO)</li>
+                <li>Loeschung deiner Daten (Art. 17 DSGVO)</li>
+                <li>Einschraenkung der Verarbeitung (Art. 18 DSGVO)</li>
+                <li>Datenuebertragbarkeit (Art. 20 DSGVO)</li>
+                <li>Widerspruch gegen die Verarbeitung (Art. 21 DSGVO)</li>
+            </ul>
+            <p>
+                Wende dich dazu einfach per E-Mail an mich. Ausserdem steht dir
+                ein Beschwerderecht bei der zustaendigen
+                Datenschutzaufsichtsbehoerde zu.
+            </p>
+
+            <h3>Stand</h3>
+            <p>Diese Datenschutzerklaerung wurde zuletzt am <span class="fill-in">[Datum eintragen]</span> aktualisiert.</p>
+        </section>
+    </div>
+
+    <footer>
+        <p><a href="index.html">&larr; Zurueck zur Startseite</a></p>
+    </footer>
+
+</body>
+</html>
