@@ -266,117 +266,6 @@
             fill: currentColor;
         }
 
-        /* Video-access card */
-        .access-card {
-            grid-column: 1 / -1;
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: space-between;
-            gap: 20px;
-        }
-
-        .access-card .icon-badge {
-            background: rgba(176, 108, 255, 0.14);
-            color: var(--accent-2);
-        }
-
-        .access-text {
-            flex: 1 1 260px;
-        }
-
-        /* ---------- Modal ---------- */
-        .modal-overlay {
-            position: fixed;
-            inset: 0;
-            background: rgba(5, 5, 8, 0.72);
-            backdrop-filter: blur(4px);
-            display: none;
-            align-items: center;
-            justify-content: center;
-            z-index: 200;
-            padding: 20px;
-        }
-
-        .modal-overlay.open {
-            display: flex;
-        }
-
-        .modal {
-            width: 100%;
-            max-width: 360px;
-            background: var(--card);
-            border: 1px solid var(--border);
-            border-radius: 18px;
-            padding: 26px;
-            text-align: center;
-            animation: pop 0.18s ease;
-        }
-
-        @keyframes pop {
-            from { transform: scale(0.94); opacity: 0; }
-            to { transform: scale(1); opacity: 1; }
-        }
-
-        .modal.shake {
-            animation: shake 0.4s ease;
-        }
-
-        @keyframes shake {
-            0%, 100% { transform: translateX(0); }
-            20% { transform: translateX(-8px); }
-            40% { transform: translateX(8px); }
-            60% { transform: translateX(-6px); }
-            80% { transform: translateX(6px); }
-        }
-
-        .modal h3 {
-            margin: 0 0 6px;
-            font-size: 17px;
-        }
-
-        .modal p.hint {
-            margin: 0 0 18px;
-            color: var(--text-dim);
-            font-size: 13px;
-        }
-
-        .code-input {
-            width: 100%;
-            padding: 14px 16px;
-            border-radius: 12px;
-            border: 1px solid var(--border);
-            background: rgba(255, 255, 255, 0.04);
-            color: var(--text);
-            font-size: 22px;
-            letter-spacing: 0.5em;
-            text-align: center;
-            outline: none;
-            margin-bottom: 6px;
-        }
-
-        .code-input:focus {
-            border-color: var(--accent);
-        }
-
-        .code-error {
-            min-height: 18px;
-            font-size: 13px;
-            color: var(--danger);
-            margin-bottom: 12px;
-        }
-
-        .modal-actions {
-            display: flex;
-            gap: 10px;
-        }
-
-        .modal-actions .btn {
-            flex: 1;
-            justify-content: center;
-            padding: 12px 18px;
-        }
-
         /* ---------- Footer ---------- */
         footer {
             text-align: center;
@@ -435,17 +324,6 @@
             .nav-links a:hover {
                 background: rgba(255, 255, 255, 0.06);
             }
-
-            .access-card {
-                flex-direction: column;
-                align-items: flex-start;
-                text-align: left;
-            }
-
-            .access-card .btn {
-                width: 100%;
-                justify-content: center;
-            }
         }
     </style>
 </head>
@@ -462,7 +340,6 @@
         <ul class="nav-links" id="nav-links">
             <li><a href="#top">Home</a></li>
             <li><a href="#about">Ueber mich</a></li>
-            <li><a href="#video">Video</a></li>
             <li><a href="mailto:shahid.shah.codes@gmail.com">Kontakt</a></li>
         </ul>
     </nav>
@@ -505,20 +382,6 @@
                     <h2>Feedback willkommen</h2>
                     <p>Hast du Tipps, wie ich mich verbessern kann? Schreib mir gerne &ndash; ich freue mich ueber jede Nachricht.</p>
                 </div>
-
-                <div class="card access-card" id="video">
-                    <div class="access-text">
-                        <div class="icon-badge">
-                            <svg viewBox="0 0 24 24"><path d="M12 1a5 5 0 0 0-5 5v3H6a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-9a2 2 0 0 0-2-2h-1V6a5 5 0 0 0-5-5zm-3 8V6a3 3 0 0 1 6 0v3z"/></svg>
-                        </div>
-                        <h2>Video-Bereich</h2>
-                        <p>Dieser Bereich ist mit einem Code geschuetzt. Gib den Code ein, um zum Video-Player weitergeleitet zu werden.</p>
-                    </div>
-                    <button type="button" class="btn btn-primary" id="open-code-modal">
-                        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 1a5 5 0 0 0-5 5v3H6a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-9a2 2 0 0 0-2-2h-1V6a5 5 0 0 0-5-5zm-3 8V6a3 3 0 0 1 6 0v3z"/></svg>
-                        Code eingeben
-                    </button>
-                </div>
             </div>
         </div>
     </main>
@@ -527,27 +390,6 @@
         <p>&copy; 2026 SSAS CODES. Alle Rechte vorbehalten.</p>
         <p><a href="mailto:shahid.shah.codes@gmail.com">shahid.shah.codes@gmail.com</a></p>
     </footer>
-
-    <div class="modal-overlay" id="code-modal-overlay">
-        <div class="modal" id="code-modal" role="dialog" aria-modal="true" aria-labelledby="code-modal-title">
-            <h3 id="code-modal-title">Code eingeben</h3>
-            <p class="hint">Gib den 4-stelligen Zugangscode ein</p>
-            <input
-                type="text"
-                inputmode="numeric"
-                pattern="[0-9]*"
-                maxlength="4"
-                class="code-input"
-                id="code-input"
-                autocomplete="off"
-                placeholder="----">
-            <p class="code-error" id="code-error"></p>
-            <div class="modal-actions">
-                <button type="button" class="btn btn-ghost" id="cancel-code">Abbrechen</button>
-                <button type="button" class="btn btn-primary" id="submit-code">Bestaetigen</button>
-            </div>
-        </div>
-    </div>
 
     <script>
         // Mobiles Menue
@@ -560,53 +402,6 @@
             link.addEventListener('click', function () {
                 navLinks.classList.remove('open');
             });
-        });
-
-        // Code-geschuetzter Zugang zum Video-Player
-        var ACCESS_CODE = '2411';
-        var overlay = document.getElementById('code-modal-overlay');
-        var modal = document.getElementById('code-modal');
-        var input = document.getElementById('code-input');
-        var errorEl = document.getElementById('code-error');
-
-        function openModal() {
-            overlay.classList.add('open');
-            errorEl.textContent = '';
-            input.value = '';
-            setTimeout(function () { input.focus(); }, 50);
-        }
-
-        function closeModal() {
-            overlay.classList.remove('open');
-        }
-
-        function checkCode() {
-            if (input.value.trim() === ACCESS_CODE) {
-                window.location.href = 'video-player.html';
-            } else {
-                errorEl.textContent = 'Falscher Code. Bitte versuch es erneut.';
-                modal.classList.remove('shake');
-                void modal.offsetWidth;
-                modal.classList.add('shake');
-                input.value = '';
-                input.focus();
-            }
-        }
-
-        document.getElementById('open-code-modal').addEventListener('click', openModal);
-        document.getElementById('cancel-code').addEventListener('click', closeModal);
-        document.getElementById('submit-code').addEventListener('click', checkCode);
-
-        overlay.addEventListener('click', function (e) {
-            if (e.target === overlay) closeModal();
-        });
-
-        input.addEventListener('keydown', function (e) {
-            if (e.key === 'Enter') checkCode();
-        });
-
-        document.addEventListener('keydown', function (e) {
-            if (e.key === 'Escape' && overlay.classList.contains('open')) closeModal();
         });
     </script>
 
