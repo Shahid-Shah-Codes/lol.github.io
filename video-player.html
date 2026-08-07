@@ -64,6 +64,19 @@
             z-index: 5;
         }
 
+        .adblock-hint {
+            max-width: 1100px;
+            margin: 14px auto 0;
+            padding: 10px 16px;
+            font-size: 13px;
+            color: #a3a3a3;
+            text-align: center;
+        }
+
+        .adblock-hint a {
+            color: #6cb6ff;
+        }
+
         footer {
             text-align: center;
             padding: 14px;
@@ -76,22 +89,20 @@
 
     <header>
         <h1>Video Player</h1>
-        <p>Eingebettet ueber ein sandboxed iframe &ndash; Pop-ups und Weiterleitungs-Werbung werden blockiert.</p>
+        <p>Klicks im Player, die ein neues Fenster/Tab dieser Seite oeffnen wollen, werden unterbunden.</p>
     </header>
 
     <main>
         <div class="player-wrapper">
             <!--
-                sandbox ohne "allow-popups", "allow-top-navigation" und
-                "allow-top-navigation-by-user-activation" verhindert, dass der
-                eingebettete Inhalt neue Tabs/Fenster oeffnet oder die Seite
-                zu einer Werbe-URL weiterleitet. "allow-scripts" und
-                "allow-same-origin" bleiben erlaubt, damit der Player selbst
-                funktioniert.
+                Kein "sandbox"-Attribut: der Hoster erkennt eine Sandbox als
+                Werbeblocker-Versuch und verweigert dann die Wiedergabe
+                komplett. Popup-Schutz laeuft daher nur noch ueber das
+                window.open-Override unten (siehe Hinweis dort zu dessen
+                Grenzen) plus den Adblocker-Hinweis fuer den Nutzer.
             -->
             <iframe
                 src="https://voe.sx/e/4elcuinalmdz"
-                sandbox="allow-scripts allow-same-origin allow-forms allow-presentation"
                 allow="fullscreen; encrypted-media; picture-in-picture"
                 allowfullscreen
                 referrerpolicy="no-referrer"
@@ -100,6 +111,11 @@
             </iframe>
             <div class="blocker-overlay"></div>
         </div>
+        <p class="adblock-hint">
+            Fuer zuverlaessigen Schutz vor Pop-up-Werbung empfehlen wir einen
+            Browser-Adblocker wie <a href="https://ublockorigin.com/" target="_blank" rel="noopener noreferrer">uBlock Origin</a>.
+            Er blockiert Werbung direkt in deinem Browser, unabhaengig vom Player.
+        </p>
     </main>
 
     <footer>
@@ -107,10 +123,10 @@
     </footer>
 
     <script>
-        // Zusaetzlicher Schutz: falls der eingebettete Inhalt versucht,
-        // die Elternseite per window.open o.ae. zu manipulieren, wird das
-        // hier unterbunden. Das sandbox-Attribut oben ist die eigentliche
-        // Blockade, das hier ist nur eine zweite Sicherheitsebene.
+        // Blockt nur Pop-ups, die von dieser Seite selbst (dem Elternfenster)
+        // ausgeloest werden. Ruft der eingebettete Player window.open() in
+        // seinem eigenen (cross-origin) Kontext auf, greift dieses Override
+        // NICHT - dagegen hilft nur ein Browser-Adblocker (siehe Hinweis oben).
         window.open = function () {
             return null;
         };
